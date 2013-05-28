@@ -3,7 +3,7 @@
 return array(
 	// True if objects should be returned by the service classes.
 	// False if associative arrays should be returned (default behavior).
-	'use_objects'           => false,
+	'use_objects'           => true,
 
 	// The application_name is included in the User-Agent HTTP header.
 	'application_name'      => '',
@@ -11,7 +11,7 @@ return array(
 	// OAuth2 Settings, you can get these keys at https://code.google.com/apis/console
 	'oauth2_client_id'      => '',
 	'oauth2_client_secret'  => '',
-	'oauth2_redirect_uri'   => '',
+	'oauth2_redirect_uri'   => URL::site(Route::get('googleapi-auth')->uri(), Request::$current),
 
 	// The developer key, you get this at https://code.google.com/apis/console
 	'developer_key'         => '',
@@ -29,10 +29,7 @@ return array(
 
 	// IO Class dependent configuration, you only have to configure the values
 	// for the class that was configured as the ioClass above
-	'ioFileCache_directory' =>
-	(function_exists('sys_get_temp_dir') ?
-	sys_get_temp_dir() . '/Google_Client' :
-	'/tmp/Google_Client'),
+	'ioFileCache_directory' => APPPATH . 'cache/Google_Client',
 
 	// Definition of service specific values like scopes, oauth token URLs, etc
 	'services'              => array(
