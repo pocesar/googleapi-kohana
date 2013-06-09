@@ -13,6 +13,9 @@ return array(
 	'oauth2_client_secret'  => '',
 	'oauth2_redirect_uri'   => URL::site(Route::get('googleapi-auth')->uri(), Request::$current),
 
+    // If you don't use a pop-up window, you can specify a different path to go to after auth has finished
+    'post_auth_url'         => '',
+
 	// The developer key, you get this at https://code.google.com/apis/console
 	'developer_key'         => '',
 

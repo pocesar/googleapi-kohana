@@ -6,8 +6,13 @@ class Controller_GoogleAPI_Auth extends Controller {
 	{
 		if (isset($_GET['code']))
 		{
-			GPlus::factory()->client->authenticateCode($_GET['code']);
-			HTTP::redirect(Request::$current->detect_uri());
+			GPlus::instance()->client->authenticateCode($_GET['code']);
+            $config = Kohana::$config->load('googleapi');
+            $redirectUrl = $config->get('post_auth_url');
+            if(empty($redirectUrl)) {
+                $redirectUrl = Request::$current->detect_uri();
+            }
+			HTTP::redirect($redirectUrl);
 		}
 		else
 		{
