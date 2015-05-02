@@ -11,6 +11,7 @@ return array(
   // Don't change these unless you're working against a special development
   // or testing environment.
   //'base_path' => 'https://www.googleapis.com',
+  'developer_key' => '',
 
   // Definition of class specific values, like file paths and so on.
   'classes' => array(

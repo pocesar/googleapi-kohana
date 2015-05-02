@@ -15,6 +15,11 @@ class GoogleAPI_Client extends Google_Client {
 		@session_start();
 
 		parent::__construct($this->config->as_array());
+
+		if (!empty($this->config->developer_key))
+		{
+			$this->setDeveloperKey($this->config->developer_key);
+		}
 	}
 
 	function authenticateCode($code = null)
