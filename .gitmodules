@@ -1,0 +1,4 @@
+[submodule "vendor"]
+	path = vendor
+	url = git@github.com:google/google-api-php-client.git
+	branch = master

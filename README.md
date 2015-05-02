@@ -1,7 +1,7 @@
 Google API for Kohana 3.3
 ================
 
-Google API client wrapper, focused on the OAuth of Google+ (+ User info) for Kohana 3.3
+Google API client wrapper, focused on the OAuth of Google+ (+ User info) for Kohana 3.3, but works for all the other services Google has to offer
 
 ### Usage
 
@@ -12,7 +12,7 @@ Google API client wrapper, focused on the OAuth of Google+ (+ User info) for Koh
 5. If not, send the user to `GPlus::instance()->client->createAuthUrl()`, preferably in a popup window
 6. The `getUser()` method returns a `Google_Person` class, that has a lot of info about the user, BUT his email. To get his email, you need to use `getUserinfo()->email`
 
-More info about the library and it's capabilities check [Google API PHP Client documentation](http://code.google.com/p/google-api-php-client/)
+More info about the library and it's capabilities check [Google API PHP Client documentation](https://developers.google.com/api-client-library/php)
 
 ### Checkout as well
 
